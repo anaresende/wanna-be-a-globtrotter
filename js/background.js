@@ -1,4 +1,4 @@
-// 2 - Create the instance of the class Background
+// Create the instance of the class Background
 // Remember to update the canvas width and heigth on html or css
 
 

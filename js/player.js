@@ -1,4 +1,4 @@
-// 8 - Create the instance of the class Player
+//  Create the instance of the class Player
 // Remember to update the canvas width and heigth on html or css
 
 
