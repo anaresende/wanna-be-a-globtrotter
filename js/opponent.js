@@ -8,8 +8,8 @@ opImg.src ='../assets/opponent.png';
 class Opponent {
     constructor(canvasContext, positionX, positionY, speed) {
       this.ctx = canvasContext;
-      this.width = 53;
-      this.height = 75;
+      this.width = 45;
+      this.height = 72;
       this.x = positionX;
       this.y = positionY;
       this.speedX = speed;

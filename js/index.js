@@ -13,6 +13,7 @@ window.onload = function() {
     const ctx = canvas.getContext('2d');
     let frameId= null;
     let opponentsId = null;
+    let gameOver = 0;
 
     document.getElementById("start-button").onclick = function(event) {
         startGame();
@@ -35,6 +36,31 @@ window.onload = function() {
         opponentArray.push(opponent);
     },2000);
 
+
+    // Check for collision to determinate game over state
+    function checkCollisions(player, opponent) {
+		let crash =
+			player.x < opponent.x + opponent.width && 
+			player.x + opponent.width > opponent.x &&
+			player.y < opponent.y + opponent.height &&
+			player.y + player.height > opponent.y;
+
+		if (crash) {
+            gameOver = 1;
+            console.log(frameId)
+			cancelAnimationFrame(frameId);
+			clearInterval(opponentsId);
+			alert('Game over!');
+			window.location.reload();
+		}
+	}
+
+
+
+
+
+
+
     //  Create start game function
     function startGame(){
 
@@ -50,8 +76,13 @@ window.onload = function() {
 
         //  Print the opponents
         opponentArray.forEach((opponent) => {
+            if (gameOver === 1) {
+                return;
+            }
+
             opponent.draw();
             opponent.move();
+            checkCollisions(player, opponent); 
         })
 
     
