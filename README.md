@@ -1,6 +1,6 @@
-# Project's name
+# Wanna be a Globtrotter ?
 Wanna be a Globtrotter ?
-[Link Deploy](http://github.com)
+
 
 
 ## Description
