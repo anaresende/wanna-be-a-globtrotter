@@ -28,9 +28,18 @@ window.onload = function() {
     //  Setting up the opponents
     const opponentArray = []
 
+    // Adding scores 
+    const yourScore = {
+		points: 0,
+		draw: function () {
+			ctx.font = '16px Arial';
+			ctx.fillStyle = 'black';
+			ctx.fillText('Score: ' + this.points, 200, 50);
+		}
+	};
+
     // Setting the interval for the opponents appear
     opponentsId = setInterval(function () {
-
         let opponentY = getRandomNumber(20, 195)
 		let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
         opponentArray.push(opponent);
@@ -55,10 +64,14 @@ window.onload = function() {
 		}
 	}
 
+    function updateScore() {
+		const numOpponentsPassed = opponentArray.filter((opponent, index) => {
+			return opponent.x < 0;
+		});
 
-
-
-
+		yourScore.points = numOpponentsPassed.length;
+        yourScore.draw();
+	}
 
 
     //  Create start game function
@@ -76,14 +89,15 @@ window.onload = function() {
 
         //  Print the opponents
         opponentArray.forEach((opponent) => {
-            if (gameOver === 1) {
-                return;
-            }
-
+            if (gameOver === 1) return;
+            
             opponent.draw();
             opponent.move();
             checkCollisions(player, opponent); 
-        })
+        });
+
+        updateScore();
+        
 
     
         //  Create a loop to animate the game
