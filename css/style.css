@@ -1,0 +1,22 @@
+.logo-img {
+    width: 300px;
+    
+}
+
+
+.game-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.basketball-court {
+    display: flex;
+    justify-content: center;
+}
+
+
+.basketball-court canvas {
+    margin-top: 50px;
+    border: 5px solid red;
+}
