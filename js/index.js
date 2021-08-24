@@ -22,10 +22,12 @@ window.onload = function() {
           // Setting the interval for the opponents appear only when click start button
     
         opponentsId = setInterval(function () {
-            let opponentY = getRandomNumber(20, 395)
+            // let opponentY = getRandomNumber(20, 395)
+            let opponentY = getRandomNumber(20, 300) // for tests only
             let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
             opponentArray.push(opponent);
-        },2000)
+
+        },1000)
         
         gameStarted = 1;
 
@@ -50,18 +52,6 @@ window.onload = function() {
 		}
 	};
 
-    // // Setting the interval for the opponents appear
-
-    // if (gameStarted === 0){
-    //     opponentsId = setInterval(function () {
-    //         let opponentY = getRandomNumber(20, 195)
-    //         let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
-    //         opponentArray.push(opponent);
-    //     },2000)
-        
-    //     gameStarted = 1;
-    // }
-
 
     // Check for collision to determinate game over state
     function checkCollisions(player, opponent) {
@@ -73,7 +63,7 @@ window.onload = function() {
 
 		if (crash) {
             gameOver = 1;
-            console.log(frameId)
+            // console.log(frameId)
 			cancelAnimationFrame(frameId);
 			clearInterval(opponentsId);
 			alert('Game over!');
@@ -82,7 +72,7 @@ window.onload = function() {
 	}
 
     function updateScore() {
-		const numOpponentsPassed = opponentArray.filter((opponent, index) => {
+		const numOpponentsPassed = opponentArray.filter((opponent) => {
 			return opponent.x < 0;
 		});
 
@@ -102,7 +92,7 @@ window.onload = function() {
 
         //  Paint the player
         player.draw();
-        player.move();
+        //player.move();
 
         //  Print the opponents
         opponentArray.forEach((opponent) => {
@@ -111,11 +101,24 @@ window.onload = function() {
             opponent.draw();
             opponent.move();
             checkCollisions(player, opponent); 
+
         });
+        
+        // stop sending opponents
+        if (background.completeBasketCourt === 1) {
+            clearInterval(opponentsId);
+
+            const numOpponentsInCourt = opponentArray.filter((opponent, index) => {
+                return opponent.x > 0 - opponent.width;
+            });
+
+            if (numOpponentsInCourt.length === 0){
+                alert('you win - you avoid all of the generals')
+            }
+        };
 
         updateScore();
-        
-
+    
     
         //  Create a loop to animate the game
         frameId = requestAnimationFrame(startGame);    
@@ -126,47 +129,38 @@ window.onload = function() {
     window.addEventListener('keydown', (event) => {
         //console.log('keydown', event.code, player.y, player.speedY)
         event.preventDefault();
-        
-
-        switch (event.code){
-            case 'ArrowUp':
-                if (player.y > 20) {
-                    player.speedY = 2;
-                    //event.preventDefault();
-                    //console.log('here', player.speedY);
-                } else {
-                    player.speedY = 0;
-                    //event.preventDefault();
-                }
-                break;
-            
-            case 'ArrowDown':
-                //console.log('tas a descer?', player.y, canvas.height- 105)
-                if (player.y < canvas.height - 105) {
-                    player.speedY = -2;
-                    //event.preventDefault();
-                    //console.log('down', player.speedY);
-                } else {
-                    player.speedY = 0;
-                    
-                }
-                break;
-
-            default:
-                break;
-                
-
-
-        }
-
-        //replaced with the switch, for having the possibility to add other keys in the future
-        // if (event.code === 'ArrowUp') {
-        //     player.speedY = 2;
-        // } else if (event.code === 'ArrowDown') {
-        //     player.speedY = -2;
+        // switch (event.code){
+        //     case 'ArrowUp':
+        //         if (player.y > 20) {
+        //             player.move();
+        //             //event.preventDefault();
+        //             console.log('move up');       
+        //         }
+        //         break;        
+        //     case 'ArrowDown':
+        //         //console.log('tas a descer?', player.y, canvas.height- 105)
+        //         if (player.y < canvas.height - 105) {
+        //             player.move();
+        //             //event.preventDefault();
+        //             console.log(' move down');
+        //         }
+        //         break;
+        //     default:
+        //         break;
         // }
 
-    })
+        if (event.code === 'ArrowUp') {
+            
+            if (player.y > 50) player.y -=15;
+            console.log('up')
+        } else if (event.code === 'ArrowDown') {
+        
+            if (player.y < canvas.height - 127) player.y +=15;
+            console.log('down')
+        
+
+    }})
+    
 
     //  set the keyup
     window.addEventListener('keyup', (event) =>{
