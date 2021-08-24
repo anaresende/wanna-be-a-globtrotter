@@ -19,6 +19,12 @@ window.onload = function() {
     document.getElementById("start-button").onclick = function(event) {
         startGame();
 
+        // changing from the splash page to the gameplay
+        console.log('start')
+        document.getElementById("game-intro").classList.remove("show");
+        document.getElementById("game-play").classList.add("show");
+         
+
           // Setting the interval for the opponents appear only when click start button
     
         opponentsId = setInterval(function () {
@@ -32,6 +38,28 @@ window.onload = function() {
         gameStarted = 1;
 
     };
+
+    document.getElementById("restart-button").onclick = function(event) {
+        startGame();
+
+        // changing from the splash page to the gameplay
+        console.log('start')
+        document.getElementById("game-over").classList.remove("show");
+        document.getElementById("game-play").classList.add("show");
+         
+
+          // Setting the interval for the opponents appear only when click start button
+    
+        opponentsId = setInterval(function () {
+            // let opponentY = getRandomNumber(20, 395)
+            let opponentY = getRandomNumber(20, 300) // for tests only
+            let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
+            opponentArray.push(opponent);
+
+        },1000)
+        
+        gameStarted = 1;
+    }
 
     //  Setting up the Background
     const background = new Background(ctx);
@@ -66,8 +94,11 @@ window.onload = function() {
             // console.log(frameId)
 			cancelAnimationFrame(frameId);
 			clearInterval(opponentsId);
-			alert('Game over!');
+			//alert('Game over!');
 			// window.location.reload();
+            document.getElementById("game-play").classList.remove("show");
+            document.getElementById("game-over").classList.add("show");
+            
 		}
 	}
 
@@ -113,7 +144,8 @@ window.onload = function() {
             });
 
             if (numOpponentsInCourt.length === 0){
-                alert('you win - you avoid all of the generals')
+                document.getElementById("game-play").classList.remove("show");
+                document.getElementById("game-win").classList.add("show");
             }
         };
 
@@ -168,11 +200,5 @@ window.onload = function() {
             player.speedY = 0;
         }
     })
-
-
-
     
-
-
 }
-
