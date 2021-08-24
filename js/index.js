@@ -13,10 +13,22 @@ window.onload = function() {
     const ctx = canvas.getContext('2d');
     let frameId= null;
     let opponentsId = null;
+    let gameStarted = 0; // flag to know if the game is started
     let gameOver = 0;
 
     document.getElementById("start-button").onclick = function(event) {
         startGame();
+
+          // Setting the interval for the opponents appear only when click start button
+    
+        opponentsId = setInterval(function () {
+            let opponentY = getRandomNumber(20, 395)
+            let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
+            opponentArray.push(opponent);
+        },2000)
+        
+        gameStarted = 1;
+
     };
 
     //  Setting up the Background
@@ -38,12 +50,17 @@ window.onload = function() {
 		}
 	};
 
-    // Setting the interval for the opponents appear
-    opponentsId = setInterval(function () {
-        let opponentY = getRandomNumber(20, 195)
-		let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
-        opponentArray.push(opponent);
-    },2000);
+    // // Setting the interval for the opponents appear
+
+    // if (gameStarted === 0){
+    //     opponentsId = setInterval(function () {
+    //         let opponentY = getRandomNumber(20, 195)
+    //         let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
+    //         opponentArray.push(opponent);
+    //     },2000)
+        
+    //     gameStarted = 1;
+    // }
 
 
     // Check for collision to determinate game over state
@@ -60,7 +77,7 @@ window.onload = function() {
 			cancelAnimationFrame(frameId);
 			clearInterval(opponentsId);
 			alert('Game over!');
-			window.location.reload();
+			// window.location.reload();
 		}
 	}
 
@@ -81,7 +98,7 @@ window.onload = function() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
          //  Paint the background
-        background.draw();
+        background.draw(frameId);
 
         //  Paint the player
         player.draw();
@@ -109,6 +126,7 @@ window.onload = function() {
     window.addEventListener('keydown', (event) => {
         //console.log('keydown', event.code, player.y, player.speedY)
         event.preventDefault();
+        
 
         switch (event.code){
             case 'ArrowUp':

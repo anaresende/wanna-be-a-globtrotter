@@ -3,8 +3,7 @@
 
 
 const playerImg = document.createElement('img');
-playerImg.src ='../assets/player.png';
-
+playerImg.src ='../assets/player.gif';
 class Player {
     constructor(canvasContext, positionX, positionY) {
         this.ctx = canvasContext;
