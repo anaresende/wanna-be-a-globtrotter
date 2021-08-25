@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Early GameBoy';
+    src: url('../fonts/Early-GameBoy.woff2') format('woff2'),
+        url('../fonts/Early-GameBoy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Early GameBoy';
+    margin: 0;
+} 
+
 .page-bg {
     display: flex;
     align-items: center;

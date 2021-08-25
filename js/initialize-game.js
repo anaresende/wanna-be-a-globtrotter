@@ -1,4 +1,3 @@
-
 //  Getting the canvas and create its context and initialize other variables
 const canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
@@ -19,9 +18,9 @@ const player = new Player(ctx, 25, canvas.height/2 - 18);
 const yourScore = {
     points: 0,
     draw: function () {
-        ctx.font = '16px Arial';
+        ctx.font = '10px Early GameBoy';
         ctx.fillStyle = 'black';
-        ctx.fillText('Score: ' + this.points, 100, 25);
+        ctx.fillText('Score: ' + this.points, 10, 20);
     }
 };
 
