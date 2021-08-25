@@ -27,7 +27,12 @@ class Background {
       
 
       this.ctx.drawImage(bgImg, x, this.y, this.width, this.height);
-      
+      console.log(delta)
     } 
+
+    init() {
+        this.x = 0;
+        this.y = 0;
+    }
         
 }
