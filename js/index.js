@@ -28,8 +28,8 @@ window.onload = function() {
           // Setting the interval for the opponents appear only when click start button
     
         opponentsId = setInterval(function () {
-            // let opponentY = getRandomNumber(20, 395)
-            let opponentY = getRandomNumber(20, 300) // for tests only
+            // let opponentY = getRandomNumber(10, 197)
+            let opponentY = getRandomNumber(10, 150) // for tests only
             let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
             opponentArray.push(opponent);
 
@@ -52,7 +52,7 @@ window.onload = function() {
     
         opponentsId = setInterval(function () {
             // let opponentY = getRandomNumber(20, 395)
-            let opponentY = getRandomNumber(20, 300) // for tests only
+            let opponentY = getRandomNumber(10, 150) // for tests only
             let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
             opponentArray.push(opponent);
 
@@ -65,7 +65,7 @@ window.onload = function() {
     const background = new Background(ctx);
 
     //  Setting up the Player
-    const player = new Player(ctx, 50, canvas.height/2 - 37);
+    const player = new Player(ctx, 25, canvas.height/2 - 18);
 
     //  Setting up the opponents
     const opponentArray = []
@@ -76,7 +76,7 @@ window.onload = function() {
 		draw: function () {
 			ctx.font = '16px Arial';
 			ctx.fillStyle = 'black';
-			ctx.fillText('Score: ' + this.points, 200, 50);
+			ctx.fillText('Score: ' + this.points, 100, 25);
 		}
 	};
 
@@ -183,11 +183,11 @@ window.onload = function() {
 
         if (event.code === 'ArrowUp') {
             
-            if (player.y > 50) player.y -=15;
+            if (player.y > 25) player.y -=15;
             console.log('up')
         } else if (event.code === 'ArrowDown') {
         
-            if (player.y < canvas.height - 127) player.y +=15;
+            if (player.y < canvas.height - 63) player.y +=15;
             console.log('down')
         
 

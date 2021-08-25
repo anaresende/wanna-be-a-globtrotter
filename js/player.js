@@ -7,8 +7,8 @@ playerImg.src ='../assets/player.gif';
 class Player {
     constructor(canvasContext, positionX, positionY) {
         this.ctx = canvasContext;
-        this.width = 45;
-        this.height = 72;
+        this.width = 22;
+        this.height = 36;
         this.x = positionX;
         this.y = positionY;
         // this.speedX = 0;

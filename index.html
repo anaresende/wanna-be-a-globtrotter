@@ -8,25 +8,29 @@
     <title>Wanna be a Globtrotter</title>
   </head>
   <body>
-    <div class="game-intro show" id="game-intro">
-      <img src="../assets/opening-logo.png" alt="" class="logo-img" />
-      <br />
-      <button id="start-button">StartGame</button>
-    </div>
+    <div class="page-bg" id="page-bg">
+      <div class="game-area" id="game-area">
+        <div class="game-intro show" id="game-intro">
+          <img src="../assets/opening-logo.png" alt="" class="logo-img" />
+          <br />
+          <button id="start-button">StartGame</button>
+        </div>
 
-    <div class="game-play" id="game-play">
-      <div class="basketball-court" id="basketball-court">
-        <canvas  id="canvas" width="500" height="500"></canvas>
+        <div class="game-play" id="game-play">
+          <div class="basketball-court" id="basketball-court">
+            <canvas  id="canvas" width="250" height="250"></canvas>
+          </div>
+        </div>
+
+        <div class="game-over" id="game-over">
+          <img src="../assets/loose-state.png" alt="" class="logo-img" />
+          <button id="restart-button">Restart Game</button>
+        </div>
+
+        <div class="game-win" id="game-win">
+          <img src="../assets/win-state.png" alt="" class="logo-img" />
+        </div>
       </div>
-    </div>
-
-    <div class="game-over" id="game-over">
-      <img src="../assets/loose-state.png" alt="" class="logo-img" />
-      <button id="restart-button">Restart Game</button>
-    </div>
-
-    <div class="game-win" id="game-win">
-      <img src="../assets/win-state.png" alt="" class="logo-img" />
     </div>
     <script type="text/javascript" src="../js/background.js"></script>
     <script type="text/javascript" src="../js/opponent.js"></script>

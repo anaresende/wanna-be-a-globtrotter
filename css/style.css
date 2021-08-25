@@ -1,8 +1,27 @@
-.logo-img {
-    width: 300px;
-    
+.page-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.game-area {
+    background-image: url(../assets/page-bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 415px;
+    height: 762px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 65px 81px 65px 84px;
+    box-sizing: border-box;
+}
+
+
+.game-area img {
+    max-width: 100%;
+    
+}
 
 .game-intro {
     display: flex;
@@ -17,8 +36,7 @@
 
 
 .basketball-court canvas {
-    margin-top: 50px;
-    border: 5px solid red;
+    border: 1px solid black;
 }
 
 .game-over {
