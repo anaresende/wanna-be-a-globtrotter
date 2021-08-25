@@ -3,7 +3,7 @@
 
 
 const opImg = document.createElement('img');
-opImg.src ='../assets/opponent.png';
+opImg.src ='./../assets/opponent.png';
 
 class Opponent {
     constructor(canvasContext, positionX, positionY, speed) {
