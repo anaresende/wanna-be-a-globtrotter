@@ -7,6 +7,7 @@ let gameStarted = 0; // flag to know if the game is started
 let gameOver = 0;
 let opponentArray = []
 let frameCount = 0;
+let ball = null;
 
 //  Setting up the Background
 const background = new Background(ctx);

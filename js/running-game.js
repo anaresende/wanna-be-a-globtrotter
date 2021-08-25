@@ -1,5 +1,5 @@
 //  Create start game function
-function startGame(){
+function runningGame(){
     console.log('start game is running')
     //  Clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -31,8 +31,6 @@ function startGame(){
             clearInterval(opponentsId);
             document.getElementById("game-play").classList.remove("show");
             document.getElementById("game-over").classList.add("show");
-            
-            
         }
     });
     
@@ -47,10 +45,42 @@ function startGame(){
             return opponent.x > 0 - opponent.width;
         });
 
+        // game - win
         if (numOpponentsInCourt.length === 0){
-            document.getElementById("game-play").classList.remove("show");
-            document.getElementById("game-win").classList.add("show");
-            return;
+            if(!ball) {
+                ball = new Ball(ctx);
+            }
+            ball.draw();
+            ball.move();
+            background.drawTarget();
+            
+            // condition for the valid shot
+            const score =
+                ball.x + ball.width > background.targetX &&  
+                ball.x < background.targetX + background.targetSize &&
+                ball.y + ball.height > background.targetY &&
+                ball.y < background.targetY + background.targetSize
+
+            // condition for shooting ball out of the court    
+            const ballIsOut =
+                ball.x > canvas.width ||
+                ball.y > canvas.height ||
+                ball.y + ball.height < 0;
+
+            
+            if (score) {
+                cancelAnimationFrame(frameId);
+                clearInterval(opponentsId);
+                document.getElementById("game-play").classList.remove("show");
+                document.getElementById("game-win").classList.add("show");
+                return;
+            } else if (ballIsOut) {
+                gameOver = 1;
+                cancelAnimationFrame(frameId);
+                clearInterval(opponentsId);
+                document.getElementById("game-play").classList.remove("show");
+                document.getElementById("game-over").classList.add("show");
+            }   
         }
     };
 
@@ -64,9 +94,8 @@ function startGame(){
 
 
     //  Create a loop to animate the game
-    frameId = requestAnimationFrame(startGame);  
+    frameId = requestAnimationFrame(runningGame);  
     frameCount++;
-    console.log('frameId - start game', frameId)  
 };
 
 
