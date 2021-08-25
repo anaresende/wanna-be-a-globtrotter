@@ -69,6 +69,15 @@ document.addEventListener('keydown', (event) => {
     } else if (event.code === 'ArrowDown') {
         event.preventDefault();
         if (player.y < canvas.height - 63) player.y +=15;
+    
+    } else if (event.code === 'ArrowRight') {
+        event.preventDefault();
+        if (player.x < 75) player.x +=15;
+    
+    } else if (event.code === 'ArrowLeft') {
+        event.preventDefault();
+        if (player.x > 25) player.x -=15;
     }
+
     
 })
