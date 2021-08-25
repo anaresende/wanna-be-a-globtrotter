@@ -14,6 +14,7 @@ const background = new Background(ctx);
 
 //  Setting up the Player
 const player = new Player(ctx, 25, canvas.height/2 - 18);
+player.init();
 
 // Adding scores 
 const yourScore = {

@@ -45,14 +45,18 @@ function runningGame(){
             return opponent.x > 0 - opponent.width;
         });
 
-        // game - win
+        // no more opponents left
         if (numOpponentsInCourt.length === 0){
             if(!ball) {
                 ball = new Ball(ctx);
             }
+
+            // print the ball for shooting
             ball.draw();
             ball.move();
             background.drawTarget();
+            clearInterval(player.flipImageIntervalId);
+            player.drawShooter();
             
             // condition for the valid shot
             const score =

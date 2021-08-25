@@ -8,7 +8,7 @@ class Ball {
         this.ctx = canvasContext;
         this.width = 8;
         this.height = 8;
-        this.x = player.x ;
+        this.x = player.x + 15 ;
         this.y = player.y ;
         this.speedY = 0;
         this.speedX = 0;

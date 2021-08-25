@@ -24,16 +24,11 @@ function startGame() {
 
 // RESTART GAME
 function restartGame() {
-        
-
     document.getElementById("game-over").classList.remove("show");
     document.getElementById("game-win").classList.remove("show");
     document.getElementById("game-play").classList.add("show");
-    
-    
 
     // Setting the interval for the opponents appear only when click start button
-
     opponentsId = setInterval(function () {
         let opponentY = getRandomNumber(20, 187)
         //let opponentY = getRandomNumber(10, 150) // for tests only
@@ -43,6 +38,7 @@ function restartGame() {
     },1000)
 
     // Reset all the positions and variables
+    clearInterval(player.flipImageIntervalId);
     ctx = null;
     ctx = canvas.getContext('2d');
     gameStarted = 1;
@@ -52,10 +48,9 @@ function restartGame() {
     opponentArray = []
     frameCount = 0;
     yourScore.points =  0;
-    
     ball = null;
+
     runningGame();
-    
 }
 
 
@@ -85,7 +80,7 @@ document.addEventListener('keydown', (event) => {
         if (player.x < 75) {
             player.x += 15;
             if (ball) {
-                ball.x = player.x;
+                ball.x = player.x + 15;
             }
         }
     
@@ -94,7 +89,7 @@ document.addEventListener('keydown', (event) => {
         if (player.x > 25){
             player.x -= 15;  
             if (ball){
-                ball.x = player.x;
+                ball.x = player.x + 15;
             }
         } 
     
