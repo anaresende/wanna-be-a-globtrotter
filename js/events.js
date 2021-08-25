@@ -11,8 +11,8 @@ function startGame() {
     // Setting the interval for the opponents appear only when click start button
 
     opponentsId = setInterval(function () {
-        // let opponentY = getRandomNumber(10, 197)
-        let opponentY = getRandomNumber(10, 150) // for tests only
+        let opponentY = getRandomNumber(20, 187)
+        //let opponentY = getRandomNumber(10, 150) // for tests only
         let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
         opponentArray.push(opponent);
 
@@ -35,8 +35,8 @@ function restartGame() {
     // Setting the interval for the opponents appear only when click start button
 
     opponentsId = setInterval(function () {
-        //let opponentY = getRandomNumber(20, 200)
-        let opponentY = getRandomNumber(10, 150) // for tests only
+        let opponentY = getRandomNumber(20, 187)
+        //let opponentY = getRandomNumber(10, 150) // for tests only
         let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
         opponentArray.push(opponent);
 
@@ -64,7 +64,7 @@ document.addEventListener('keydown', (event) => {
 
     if (event.code === 'ArrowUp') {
         event.preventDefault();
-        if (player.y > 25){
+        if (player.y > 20){
             player.y -= 15; 
             if (ball) {
                 ball.y = player.y

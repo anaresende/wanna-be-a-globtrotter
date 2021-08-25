@@ -7,7 +7,7 @@ class Background {
       this.ctx = canvasContext;
       this.width = 500;
       this.height = 250;
-      this.x = -230;
+      this.x = 0;
       this.y = 0;
       this.completeBasketCourt = 0;
       this.targetX = this.ctx.canvas.width - 40;
