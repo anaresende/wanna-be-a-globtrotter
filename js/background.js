@@ -3,7 +3,7 @@
 
 
 const bgImg = document.createElement('img');
-bgImg.src ='./../assets/basket-court.png';
+bgImg.src ='./assets/basket-court.png';
 
 class Background {
     constructor(canvasContext) {
