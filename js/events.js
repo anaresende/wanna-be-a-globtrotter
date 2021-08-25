@@ -24,10 +24,11 @@ document.getElementById("start-button").onclick = function(event) {
 };
 
 // RESTART GAME
-document.getElementById("restart-button").onclick = function(event) {
+function restartGame() {
         
 
     document.getElementById("game-over").classList.remove("show");
+    document.getElementById("game-win").classList.remove("show");
     document.getElementById("game-play").classList.add("show");
     
     
@@ -48,8 +49,7 @@ document.getElementById("restart-button").onclick = function(event) {
     gameStarted = 1;
     gameOver = 0;
     background.init();
-    player.x = 25;
-    player.y = canvas.height/2 - 18;
+    player.init();
     opponentArray = []
     frameCount = 0;
 

@@ -37,7 +37,6 @@ function startGame(){
     });
     
     if(gameOver === 1) {
-        console.log('game over')
         return;
     }
     // stop sending opponents when you reach the other side of the court
@@ -51,6 +50,7 @@ function startGame(){
         if (numOpponentsInCourt.length === 0){
             document.getElementById("game-play").classList.remove("show");
             document.getElementById("game-win").classList.add("show");
+            return;
         }
     };
 

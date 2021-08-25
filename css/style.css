@@ -12,6 +12,34 @@ body {
     margin: 0;
 } 
 
+h1 {
+    font-size: 1rem;
+    color: #222c6a;
+    text-align: center;
+    
+}
+
+img {
+    max-width: 100%;
+}
+
+.logo-img {
+    width: 150px;
+}
+
+.button {
+    font-family: 'Early GameBoy';
+    font-size: 0.75rem;
+    color: #df1e36;
+    border: none;
+    background: none;
+    transition: color 0.2s ease 0.2s;
+}
+
+.button:hover {
+    color: #222c6a;
+}
+
 .page-bg {
     display: flex;
     align-items: center;
@@ -31,16 +59,15 @@ body {
     box-sizing: border-box;
 }
 
-
-.game-area img {
-    max-width: 100%;
-    
-}
-
 .game-intro {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.game-intro .logo-img {
+    margin-top: 10px;
+    margin-bottom: 25px;
 }
 
 .basketball-court {
@@ -59,10 +86,31 @@ body {
     align-items: center;
 }
 
+.game-over h1 {
+    font-size: 2rem;
+    margin-top: 75px;
+
+}
+
 .game-win {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.game-win h1 {
+    font-size: 0.85rem;
+}
+
+.game-win .logo-img {
+    margin-top: 15px;
+}
+
+.game-win h2 {
+    font-size: 0.65rem;
+    color: #222c6a;
+    text-align: center;
+    margin-top: 15px;
 }
 
 .game-intro, .game-play, .game-over, .game-win {

@@ -11,9 +11,9 @@
     <div class="page-bg" id="page-bg">
       <div class="game-area" id="game-area">
         <div class="game-intro show" id="game-intro">
-          <img src="./assets/opening-logo.png" alt="" class="logo-img" />
-          <br />
-          <button id="start-button">StartGame</button>
+          <h1>Wanna be a<br/>Globtrotter?</h1>
+          <img src="./assets/logo.png" alt="" class="logo-img" />
+          <button class="button" id="start-button">start game</button>
         </div>
 
         <div class="game-play" id="game-play">
@@ -23,12 +23,15 @@
         </div>
 
         <div class="game-over" id="game-over">
-          <img src="./assets/loose-state.png" alt="" class="logo-img" />
-          <button id="restart-button">Restart Game</button>
+          <h1>Loser</h1>
+          <button class="button" onclick="restartGame()">Keep Trying?</button>
         </div>
 
         <div class="game-win" id="game-win">
-          <img src="./assets/win-state.png" alt="" class="logo-img" />
+          <h1>CONGRATULATIONS!</h1>
+          <img src="./assets/logo.png" alt="" class="logo-img" />
+          <h2>Welcome to<br/>the team</h2>
+          <button class="button" onclick="restartGame()">Play again?</button>
         </div>
       </div>
     </div>
