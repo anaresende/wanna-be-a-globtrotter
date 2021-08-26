@@ -9,7 +9,7 @@
 
 body {
     /* so that double tap on mobile safari does not activate zoom
-    https://stackoverflow.com/a/62165035 */
+     https://stackoverflow.com/a/62165035 */
     touch-action: pan-x pan-y;
     touch-action: none;
 
@@ -160,7 +160,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 8px;
 }
 
 .game-instructions p{
