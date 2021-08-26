@@ -1,3 +1,12 @@
+// BEFORE PLAYING
+
+function readInstructions() {
+    document.getElementById("game-instructions").classList.remove("show");
+    document.getElementById("game-intro").classList.add("show");
+}
+
+
+
 
 // START GAME
 function startGame() {

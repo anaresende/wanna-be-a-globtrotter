@@ -17,12 +17,20 @@
         <button class="btn-a" onclick="shotBall()"></button>
         <button class="btn-select" onclick="restartGame()"></button>
         <button class="btn-start" onclick="startGame()" ></button>
-        <div class="game-intro show" id="game-intro">
+        <button class="btn-b" onclick="readInstructions()" ></button>
+        <div class="game-instructions show" id="game-instructions">
+          <h1>Ready to play ?</h1>
+          <p>Use the arrow keys or the console buttons to move the player.</p>
+          <p>Use the space key or the "A" button to shoot.</p>
+          <p>Press Start to start the game, and select to restart.</p>
+          <p>"B" or continue.</p>
+          <button class="button" onclick="readInstructions()">continue</button>
+        </div>
+        <div class="game-intro" id="game-intro">
           <h1>Wanna be a<br/>Globtrotter?</h1>
           <img src="./assets/logo.png" alt="" class="logo-img" />
           <button class="button" onclick="startGame()">start game</button>
         </div>
-
         <div class="game-play" id="game-play">
           <div class="basketball-court" id="basketball-court">
             <canvas  id="canvas" width="250" height="250"></canvas>

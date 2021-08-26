@@ -103,6 +103,17 @@ img {
     
 }
 
+.btn-b {
+    position: absolute;
+    background-color: transparent;
+    top: 495px;
+    left: 270px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
 .logo-img {
     width: 150px;
 }
@@ -138,6 +149,18 @@ img {
     padding: 65px 81px 65px 84px;
     box-sizing: border-box;
     position: relative;
+}
+
+.game-instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.game-instructions p{
+    font-size: 0.50rem;
+    text-align: center;
 }
 
 .game-intro {
@@ -195,7 +218,7 @@ img {
     margin-top: 15px;
 }
 
-.game-intro, .game-play, .game-over, .game-win {
+.game-intro, .game-play, .game-over, .game-win, .game-instructions {
     display: none;
 }
 
