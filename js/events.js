@@ -110,9 +110,8 @@ document.addEventListener('keydown', (event) => {
    
     } else if (event.code === 'ArrowDown') {
         event.preventDefault();
-        doDown();
+        goDown();
         
-    
     } else if (event.code === 'ArrowRight') {
         event.preventDefault();
         goRight();

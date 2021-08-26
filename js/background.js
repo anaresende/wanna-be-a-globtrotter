@@ -27,7 +27,7 @@ class Background {
     } 
 
     drawTarget(){
-      this.ctx.fillStyle = 'rgba(255, 0, 0, 0.2)';
+      this.ctx.fillStyle = 'rgba(255, 0, 0, 0)';
       this.ctx.fillRect(this.targetX, this.targetY, this.targetSize, this.targetSize);
     }
 
