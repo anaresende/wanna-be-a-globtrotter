@@ -24,6 +24,85 @@ img {
     max-width: 100%;
 }
 
+.btn-start {
+    position: absolute;
+    background-color: transparent;
+    top: 665px;
+    left: 240px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+    
+}
+
+.btn-select {
+    position: absolute;
+    background-color: transparent;
+    top: 665px;
+    left: 155px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
+.btn-up {
+    position: absolute;
+    background-color: transparent;
+    top: 445px;
+    left: 80px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
+.btn-down {
+    position: absolute;
+    background-color: transparent;
+    top: 520px;
+    left: 80px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
+.btn-left {
+    position: absolute;
+    background-color: transparent;
+    top: 480px;
+    left: 40px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
+.btn-right {
+    position: absolute;
+    background-color: transparent;
+    top: 480px;
+    left: 120px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+}
+
+.btn-a {
+    position: absolute;
+    background-color: transparent;
+    top: 455px;
+    left: 340px;
+    height: 20px;
+    width: 20px;
+    border: none;
+    background: none;
+    
+}
+
 .logo-img {
     width: 150px;
 }
@@ -58,6 +137,7 @@ img {
     align-items: start;
     padding: 65px 81px 65px 84px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .game-intro {
