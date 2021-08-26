@@ -35,6 +35,9 @@ function runningGame(){
     });
     
     if(gameOver === 1) {
+        audioGameplay.pause();
+        audioGameplay.currentTime = 0;
+        audioLoser.play();
         return;
     }
     // stop sending opponents when you reach the other side of the court
@@ -77,6 +80,9 @@ function runningGame(){
                 clearInterval(opponentsId);
                 document.getElementById("game-play").classList.remove("show");
                 document.getElementById("game-win").classList.add("show");
+                audioGameplay.pause();
+                audioGameplay.currentTime = 0;
+                audioWinnig.play();
                 return;
             } else if (ballIsOut) {
                 gameOver = 1;

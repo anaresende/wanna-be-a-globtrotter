@@ -3,6 +3,7 @@
 function readInstructions() {
     document.getElementById("game-instructions").classList.remove("show");
     document.getElementById("game-intro").classList.add("show");
+    audioClick.play();
 }
 
 
@@ -11,6 +12,8 @@ function readInstructions() {
 // START GAME
 function startGame() {
     runningGame();
+    audioClick.play();
+    audioGameplay.play();
 
     // changing from the splash page to the gameplay
     document.getElementById("game-intro").classList.remove("show");
@@ -33,6 +36,8 @@ function startGame() {
 
 // RESTART GAME
 function restartGame() {
+    audioClick.play();
+    audioGameplay.play();
     document.getElementById("game-over").classList.remove("show");
     document.getElementById("game-win").classList.remove("show");
     document.getElementById("game-play").classList.add("show");
@@ -104,6 +109,7 @@ function shotBall() {
         ball.speedX = 2;
         ball.speedY = 1.5;
 
+        audioShooting.play();
         setTimeout(() => {
              ball.speedY = -1.5;
         }, 600);

@@ -8,6 +8,11 @@
 }
 
 body {
+    /* so that double tap on mobile safari does not activate zoom
+    https://stackoverflow.com/a/62165035 */
+    touch-action: pan-x pan-y;
+    touch-action: none;
+
     font-family: 'Early GameBoy';
     margin: 0;
     background-color: #f2b991;
