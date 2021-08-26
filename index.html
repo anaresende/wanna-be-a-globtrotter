@@ -15,7 +15,7 @@
         <button class="btn-right"onclick="goRight()"></button>
         <button class="btn-left" onclick="goLeft()"></button>
         <button class="btn-a" onclick="shotBall()"></button>
-        <button class="btn-select" onclick="restartGame()"></button>
+        <button class="btn-select" onclick="startGame()"></button>
         <button class="btn-start" onclick="startGame()" ></button>
         <button class="btn-b" onclick="readInstructions()" ></button>
         <div class="game-instructions show" id="game-instructions">
@@ -39,14 +39,14 @@
 
         <div class="game-over" id="game-over">
           <h1>Loser</h1>
-          <button class="button" onclick="restartGame()">Keep Trying?</button>
+          <button class="button" onclick="startGame()">Keep Trying?</button>
         </div>
 
         <div class="game-win" id="game-win">
           <h1>CONGRATULATIONS!</h1>
           <img src="./assets/logo.png" alt="" class="logo-img" />
           <h2>Welcome to<br/>the team</h2>
-          <button class="button" onclick="restartGame()">Play again?</button>
+          <button class="button" onclick="startGame()">Play again?</button>
         </div>
       </div>
     </div>

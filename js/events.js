@@ -9,35 +9,39 @@ function readInstructions() {
 
 
 
-// START GAME
-function startGame() {
-    runningGame();
-    audioClick.play();
-    audioGameplay.play();
+// // START GAME
+// function startGame() {
+//     runningGame();
+//     audioClick.play();
+//     audioGameplay.play();
 
-    // changing from the splash page to the gameplay
-    document.getElementById("game-intro").classList.remove("show");
-    document.getElementById("game-play").classList.add("show");
+//     // changing from the splash page to the gameplay
+//     document.getElementById("game-instructions").classList.remove("show");
+//     document.getElementById("game-over").classList.remove("show");
+//     document.getElementById("game-intro").classList.remove("show");
+//     document.getElementById("game-play").classList.add("show");
     
 
-    // Setting the interval for the opponents appear only when click start button
+//     // Setting the interval for the opponents appear only when click start button
 
-    opponentsId = setInterval(function () {
-        let opponentY = getRandomNumber(20, 187)
-        //let opponentY = getRandomNumber(10, 150) // for tests only
-        let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
-        opponentArray.push(opponent);
+//     opponentsId = setInterval(function () {
+//         let opponentY = getRandomNumber(20, 187)
+//         //let opponentY = getRandomNumber(10, 150) // for tests only
+//         let opponent = new Opponent(ctx, canvas.width, opponentY, 2.5);
+//         opponentArray.push(opponent);
 
-    },1000)
+//     },1000)
     
-    gameStarted = 1;
+//     gameStarted = 1;
 
-};
+// };
 
 // RESTART GAME
-function restartGame() {
+function startGame() {
     audioClick.play();
     audioGameplay.play();
+    document.getElementById("game-intro").classList.remove("show");
+    document.getElementById("game-instructions").classList.remove("show");
     document.getElementById("game-over").classList.remove("show");
     document.getElementById("game-win").classList.remove("show");
     document.getElementById("game-play").classList.add("show");
@@ -65,6 +69,7 @@ function restartGame() {
     ball = null;
 
     runningGame();
+    gameStarted = 1;
 }
 
 // put the movement of the player im a function so that it can be used also with the buttons
