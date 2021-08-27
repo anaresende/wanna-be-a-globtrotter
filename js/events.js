@@ -17,6 +17,8 @@ function startGame() {
     document.getElementById("game-win").classList.remove("show");
     document.getElementById("game-play").classList.add("show");
 
+    if (opponentsId) clearInterval(opponentsId);
+
     // Setting the interval for the opponents appear only when click start button
     opponentsId = setInterval(function () {
         let opponentY = getRandomNumber(20, 187)
